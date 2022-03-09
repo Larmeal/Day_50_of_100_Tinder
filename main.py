@@ -1,12 +1,16 @@
+from pathlib import Path
 from selenium.common.exceptions import ElementClickInterceptedException, NoSuchElementException, ElementNotInteractableException
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
-
+from dotenv import load_dotenv
 import time
 import os
 
-USER_GMAIL = "armloveyou252@hotmail.com" 
-PASSWORD_GMAIL = "@Armandsoft87"
+dotenv_load = Path(".env")
+load_dotenv(dotenv_path=dotenv_load)
+
+USER_GMAIL = os.getenv("USER")
+PASSWORD_GMAIL = os.getenv("PASSWORD")
 
 
 chrome_driver = "C:\Developer\chromedriver.exe"
